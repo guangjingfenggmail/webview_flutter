@@ -6,12 +6,12 @@ package io.flutter.plugins.webviewflutter;
 
 import android.annotation.TargetApi;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.annotation.NonNull;
-import androidx.webkit.WebViewClientCompat;
+
 import io.flutter.plugin.common.MethodChannel;
 import java.util.HashMap;
 import java.util.Map;
@@ -113,8 +113,8 @@ class FlutterWebViewClient {
     };
   }
 
-  private WebViewClientCompat internalCreateWebViewClientCompat() {
-    return new WebViewClientCompat() {
+  private WebViewClient internalCreateWebViewClientCompat() {
+    return new WebViewClient() {
       @Override
       public boolean shouldOverrideUrlLoading(
           @NonNull WebView view, @NonNull WebResourceRequest request) {
